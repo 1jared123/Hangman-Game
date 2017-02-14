@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+// 	setup the game
+// 		use JS object ot track state
+// game needs to generate a word froma list
+// 		lazily, start with a word
+// we need to accept user input to guess the word
+// 		use the prompt function to gain user input
+// we need to keep track of the number of guesses
+// 		add user guesses to an array
+// we need to compare the user guesses to the game word
+// 		i have no idea right now
+// we need to show the user their game status
+// 		render scoreboard on the screen
+
+// when a user action is fired off, change these. 
+// Use this to see current game state while using.
+
+
+ 
+	var gameState = {
+		gameWord: "zebra",
+		currentGuessedLetter: "",
+		currentGuessedWord: "",
+		numberOfGuesses: 0,
+
+	};
+
+	document.onkeyup = function(event) {
+		var guessedLetter = "a";
+		gameState.currentguessedLetter = guessedLetter;
+		gameState.numberOfGuesses++;
+		renderScoreboard();
+	};
+
+	function renderScoreboard() {
+		var scorebaord = document.getElementById("scoreboard");
+		scoreboard.innerHTML = gameState.numberOfGuesses;
+	}
+
+</script>
+
+</body>
+</html>
+

@@ -1,3 +1,14 @@
 h1 {
 	color: pink;
+	align-content: center;
+	padding-left: 50px;
+}
+
+img {
+	align-content: center;
+}
+
+body {
+	align-content: center;
+	padding-left: 50px;
 }

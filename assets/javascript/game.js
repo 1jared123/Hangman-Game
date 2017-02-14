@@ -1,11 +1,11 @@
 window.onload = function() {
-    var wordSelect = ["bacon", "turkey", "ham", "beef", "chicken", "pastrami", "filet mignon", "drumstick", "frankfurter", "ribs", "hamburger", "rump roast", "ribeye", "steack"];
-    var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-    //set var for users guest
+var wordSelect = ["bacon", "turkey", "ham", "beef", "chicken", "pastrami", "filet mignon", "drumstick", "frankfurter", "ribs", "hamburger", "rump roast", "ribeye", "steack"];
+
+//set var for users guest
     var userGuess = event.key;
     var computerGuess = wordSelect[Math.floor(Math.random() * wordSelect.length)];
-    var guesses = 15;
+    
     var counter ;
     var space ;
     var wins ;
@@ -15,6 +15,36 @@ window.onload = function() {
     var showGuessesLeft = document.getElementById("showGuessesLeft");
     var lettersGuessed = document.getElementById("lettersGuessed");
 
+    //set game state setup
+    var gameState = {
+        gameWord: wordSelect,
+        currentGuessedLetter: "",
+        currentGuessedWord: computerGuess,
+        numberOfGuesses: 15,
+        currentWins: 0,
+    };
+
+    document.onkeyup = function(event) {
+        var guessedLetter = "a";
+        gameState.currentGuessedLetter = guessedLetter;
+        gameState.numberOfGuesses--;
+        
+    };
+
+    function renderScoreboard() {
+        var scoreboard = document.getElementById("triesLeft");
+        scoreboard.innerHTML = gameState.numberOfGuesses;
+    }
+
+    function showCurrentWord() {
+        for (i = 0; i <currentGuessedWord.length; i++) {
+            
+        }
+    }
+
+        
+    renderScoreboard();
+    $("#word").html(gameState.currentGuessedWord);
     //function for users input
     
 
@@ -33,17 +63,7 @@ window.onload = function() {
     }
   }
 
-  play = function() {
-
-    word = computerGuess[Math.floor(Math.random() * computerGuess.length)];
-    word =  word.replace(/\s/g, "-");
-
-    guesses = 15;
-
-
-  }
-
-play(); 
+   
 
   document.onkeydown = function(event) {
 
@@ -51,9 +71,9 @@ play();
         var userGuess = event.key;
 
 
-        if (userGuess === "f") {
-            console.log("it's working!");
-        } else {console.log("IT BROKEN!") };
+        // if (userGuess === "f") {
+        //     console.log("it's working!");
+        // } else {console.log("IT BROKEN!") };
 
     };
 
