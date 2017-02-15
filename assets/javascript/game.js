@@ -28,16 +28,6 @@ var winCounter = 0;
 var lossCounter = 0;
 var numGuesses = 9;
 
-//set game state setup
-        // var gameState = {
-        //     gameWord: wordList,
-        //     currentGuessedLetter: "",
-        //     currentGuessedWord: chosenWord,
-        //     numberOfGuesses: 15,
-        //     currentWins: 0,
-    // };
-
-
 
     function startGame() {
         wrongGuesses = [];
@@ -141,78 +131,6 @@ startGame(); //calls this function to start the game.
 
 
 
-
-    
-
-    
-    // console.log(gameState.currentGuessedWord);
-
-    // function renderScoreboard() {
-    //     var scoreboard = document.getElementById("triesLeft");
-    //     scoreboard.innerHTML = gameState.numberOfGuesses;
-    //     changeWord();
-    //         var userGuess = event.key;
-
-    // }
-
-    // function changeWord() {
-    //     for (i = 0; i < gameState.numberOfGuesses; i++) {
-    //         gameState.currentGuessedWord = (gameState.currentGuessedWord + "_");
-    //         console.log("Boarding");
-    //     }   
-    // }
-
-    
-
-    // Show guesses left
-    // function guessesLeft() {
-    // triesLeft.innerHTML = numberOfGuesses + " guesses left";
-    //     if (numberOfGuesses < 1) {
-    //       triesLeft.innerHTML = "Game Over";
-    //     }
-    //     for (var i = 0; i < word.length; i++) {
-    //       if (counter + space === word.length) {
-    //         triesLeft.innerHTML = "You Win!";
-    //       }
-    //     }
-    // }
-
-    // document.onkeyup = function(event) {
-    //     var guessedLetter = event.key;
-    //     gameState.currentGuessedLetter = letterGuessed;
-    //     gameState.numberOfGuesses--;
-
-    //     letterGuessed.push(guessedLetter); //push guesed letter into the array. 
-        
-    //     for (i=0; i < letterGuessed; i++) {
-    //         $("#lettersGuessed").append("<p>" + currentGuessedLetter + "</p>");
-    //     }
-    // };
-
-    
-
-        
-    // renderScoreboard();
-    // $("#word").html(gameState.currentGuessedWord);
-    //function for users input
-    
-
-
-
-      
-   
-   
-
-  // document.onkeydown = function(event) {
-
-  //       // computer selects a word
-  //       var userGuess = event.key;
-
-
-        // if (userGuess === "f") {
-        //     console.log("it's working!");
-        // } else {console.log("IT BROKEN!") };
-
-    // };
+  
 }
 
