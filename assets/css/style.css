@@ -1,14 +1,37 @@
-h1 {
-	color: pink;
+body {
 	align-content: center;
+	padding: 10px;
+	margin: 10px;
+	letter-spacing: 1px;
+	font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+	color: brown;
+	text-align: center;
+	font-weight: bold;
+}
+
+h1 {
+	color: #660000;
 	padding-left: 50px;
+	letter-spacing: 3px;
+	line-height: 30px;
+}
+
+h2 {
+	color: pink;
+	letter-spacing: 2px;
+	color: #660000;
 }
 
 img {
 	align-content: center;
 }
 
-body {
-	align-content: center;
-	padding-left: 50px;
+#word {
+	font-family: 'Georgia', Times, "Times New Roman", serif;
+	
+}
+p {
+	color: #800000;
+	font-size: 20px;
+	font-weight: bold;
 }

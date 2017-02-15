@@ -14,28 +14,35 @@
 
   </head>
   
-  <body>
+  <body background="assets/images/meatytaste.jpg">
 
     <div class="row">
       <img class="col-md-12" src="assets/images/MeatHangman.png.png">
     </div>
-    <!-- set up the name of the game to be displayed. -->
+
     <div class="row">
       <h1>Guess the Meat!</h1>
 
-      <!-- Press W for testing! -->
-      <p> </p>
-    
-      <p>Press any key to get started!</p>
+      <h2>Press any key to get started!</h2>
 
-      <p>Wins:  <span id="wins"></span></p>
-      <p>Losses:  <span id="losses"></span> </p>
 
-      <p id="word"></p>
+      <div class="row">
+        <div  class="col-md-6">
+            <p> <span id="winnersGlory"></span></p>
+        </div>
 
-      <p id="triesLeft"></p>
+        <div  class="col-md-6">
+        <p>  <span id="wins"></span></p>
+        <p>  <span id="losses"></span> </p>
 
-      <p id="lettersGuessed"></p>
+        <p>  <span id="word"></span></p>
+
+        <p>Guesses Left:  <span id="triesLeft"></span></p>
+
+        <p>Letters Guessed:  <span id="lettersGuessed"></span></p>
+        </div>
+
+      </div>
     
     </div> 
 

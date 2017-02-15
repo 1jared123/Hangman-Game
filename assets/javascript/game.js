@@ -3,18 +3,18 @@ window.onload = function() {
 
 //set var for users guest
 var wordList = [
-"bacon",
- "turkey",
-  "ham",
-   "beef",
+    "bacon",
+    "turkey",
+    "ham",
+    "beef",
     "chicken",
-     "pastrami",
-       "drumstick",
-        "frankfurter",
-         "ribs",
-          "hamburger",
-            "ribeye",
-             "steak"
+    "pastrami",
+    "drumstick",
+    "frankfurter",
+    "ribs",
+    "hamburger",
+    "ribeye",
+    "steak"
               ]
 
 var chosenWord = "";
@@ -57,8 +57,10 @@ var numGuesses = 9;
             blanksAndSuccesses.push("_");        
         };
 
-    document.getElementById("lettersGuessed").innerHTML = blanksAndSuccesses.join(" ");
+
     document.getElementById("triesLeft").innerHTML = numGuesses;
+    document.getElementById("word").innerHTML = blanksAndSuccesses.join(" ");
+    
     
 
     }
@@ -94,10 +96,10 @@ var numGuesses = 9;
 
     function roundComplete() {
 
-        document.getElementById("word").innerHTML = blanksAndSuccesses.join(" ");
-        document.getElementById("triesLeft").innerHTML = "Guesses Left: " +  numGuesses;
+        
+        document.getElementById("triesLeft").innerHTML =  numGuesses;
         document.getElementById("lettersGuessed").innerHTML = wrongGuesses.join(" ");
-
+        document.getElementById("word").innerHTML = blanksAndSuccesses.join(" ");
 
         console.log(lettersInChosenWord);
         console.log(blanksAndSuccesses);
@@ -105,11 +107,12 @@ var numGuesses = 9;
         if (lettersInChosenWord.join(" ") === blanksAndSuccesses.join(" ")) {
             winCounter++;
             alert("YOU WIN!");
-            document.getElementById("wins").innerHTML = winCounter;
+            document.getElementById("wins").innerHTML ="Wins: " + winCounter;
+            document.getElementById('winnersGlory').innerHTML = ""
             startGame();
         } else if (numGuesses === 0) {
             lossCounter++;
-            document.getElementById("losses").innerHTML = lossCounter;
+            document.getElementById("losses").innerHTML ="Losses: " + lossCounter;
             alert("No more guesses!")
             startGame();
         }
@@ -122,9 +125,8 @@ var numGuesses = 9;
     };
 
 
+startGame(); //calls this function to start the game. 
 
-
-startGame();
     document.onkeyup = function(event) {
         // take in letter typed in.
         // pass it through the checkletter function.
@@ -212,30 +214,5 @@ startGame();
         // } else {console.log("IT BROKEN!") };
 
     // };
-
-  
-    // console.log("I'm awesome!");
-
-    //change that word into _ and display all the _
-
-    //take in a letter from the player and determine if it's in the word
-
-    //list the letters the user had used
-
-    //list the number of guesses left
-
-    //list the wins
-    
-
-    //show pictures and maybe music to match the words.
-
-    //replace _ with correct letter in word. 
-
-    
-
-    // results after word is guessed.
-        
-    
-
 }
 
