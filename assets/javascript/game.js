@@ -51,16 +51,6 @@ var winCounter = 0;
 var lossCounter = 0;
 var numGuesses = 9;
 
-//set game state setup
-        // var gameState = {
-        //     gameWord: wordList,
-        //     currentGuessedLetter: "",
-        //     currentGuessedWord: chosenWord,
-        //     numberOfGuesses: 15,
-        //     currentWins: 0,
-    // };
-
-
 
     function startGame() {
         wrongGuesses = [];
@@ -165,6 +155,7 @@ startGame(); //calls this function to start the game.
         checkLetters(letterGuessed);
         roundComplete();
     };
+
 
 }
 
