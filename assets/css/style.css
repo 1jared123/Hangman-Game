@@ -14,12 +14,18 @@ h1 {
 	padding-left: 50px;
 	letter-spacing: 3px;
 	line-height: 30px;
+    text-shadow: 0 0 5px #b30000, 0 0 10px #b30000,
+             0 0 20px #b30000, 0 0 30px #b30000,
+             0 0 40px #b30000;
 }
 
 h2 {
 	color: pink;
 	letter-spacing: 2px;
 	color: #660000;
+	text-shadow: 0 0 5px #b30000, 0 0 10px #b30000,
+             0 0 20px #b30000, 0 0 30px #b30000,
+             0 0 40px #b30000;
 }
 
 img {
@@ -34,4 +40,38 @@ p {
 	color: #800000;
 	font-size: 20px;
 	font-weight: bold;
+	text-shadow: 0 0 5px #ff0066, 0 0 10px #ff0066,
+             0 0 20px #ff0066, 0 0 30px #ff0066,
+             0 0 40px #ff0066;
+}
+
+.funny {
+	font-size: 100px;
+    color: #cc3300;
+    position: relative;
+    font-weight: bolder;
+    text-shadow: 0 1px 0 #999999, 0 2px 0 #888888,
+             0 3px 0 #777777, 0 4px 0 #666666,
+             0 5px 0 #555555, 0 6px 0 #444444,
+             0 7px 0 #333333, 0 8px 7px rgba(0, 0, 0, 0.4),
+             0 9px 10px rgba(0, 0, 0, 0.2);
+}
+
+.funny p {
+	font-size: 80px;
+	color: #117FB2;
+	position: absolute;
+	margin: 10px;
+	align-content: center;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	text-shadow: 0 0 5px #b3d9ff, 0 0 10px #b3d9ff,
+             0 0 20px #b3d9ff, 0 0 30px #b3d9ff,
+             0 0 40px #b3d9ff;
+    -webkit-mask-box-image: -webkit-gradient(linear,
+                left top, left bottom,
+                color-stop(20%,rgba(0,0,0,1)),
+                color-stop(100%,rgba(0,0,0,0)));
+    transform: rotate(-13deg);
 }

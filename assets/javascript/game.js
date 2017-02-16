@@ -3,18 +3,41 @@ window.onload = function() {
 
 //set var for users guest
 var wordList = [
-    "bacon",
-    "turkey",
-    "ham",
-    "beef",
-    "chicken",
-    "pastrami",
-    "drumstick",
-    "frankfurter",
-    "ribs",
-    "hamburger",
-    "ribeye",
-    "steak"
+    {meat: "bacon",
+    image: "notenoughbacon.jpg"},
+
+    {meat: "turkey",
+    image: "turkeyjerky.jpg"},
+
+    {meat: "ham",
+    image: "sirhamy.jpg"},
+
+    {meat: "beef",
+    image: "itswhatsfordinner.jpg"},
+
+    {meat: "chicken",
+    image: "chickfila.jpg"},
+
+    {meat: "pastrami",
+    image: "foood.jpg"},
+
+    {meat: "drumstick",
+    image: "popeyes"},
+
+    {meat: "frankfurter",
+    image: "hotdog.jpg"},
+
+    {meat: "ribs", 
+    image: "dontlose.jpg"},
+
+    {meat: "hamburger",
+    image: "foodofthegods.jpg"},
+
+    {meat: "ribeye",
+    image: "snackmeat.jpg"},
+
+    {meat: "steak",
+    image: "dreambreakfast.jpg"}
               ]
 
 var chosenWord = "";
@@ -41,13 +64,13 @@ var numGuesses = 9;
 
     function startGame() {
         wrongGuesses = [];
-        numGuesses = 9;
-        
         blanksAndSuccesses = [];
+        numGuesses = 9;
 
 
-        chosenWord = wordList[Math.floor(Math.random() * wordList.length)];
-        lettersInChosenWord = chosenWord.split("");
+        chosenWord = (Math.floor(Math.random() * wordList.length));
+        lettersInChosenWord = wordList[chosenWord].meat.split("");
+        theWord = wordList[chosenWord].meat;
         numBlanks = lettersInChosenWord.length;
 
         console.log(chosenWord);
@@ -65,6 +88,10 @@ var numGuesses = 9;
 
     }
 
+    function displayImage() {
+        document.getElementById("winnersGlory").innerHTML = "<img src='assets/images/" + wordList[chosenWord].image + "'/>";
+    }
+
 
     function checkLetters(letter) {
 
@@ -72,14 +99,14 @@ var numGuesses = 9;
 
 
         for (var i =0; i < numBlanks; i++) {
-            if(chosenWord[i] === letter) {
+            if(theWord[i] === letter) {
                 letterInWord = true;
             }
         }
 
         if (letterInWord) {
             for (i = 0; i < numBlanks; i++) {
-                 if(chosenWord[i] === letter) {
+                 if(theWord[i] === letter) {
                 blanksAndSuccesses[i] = letter;
             }
 
@@ -106,9 +133,10 @@ var numGuesses = 9;
 
         if (lettersInChosenWord.join(" ") === blanksAndSuccesses.join(" ")) {
             winCounter++;
-            alert("YOU WIN!");
+            
             document.getElementById("wins").innerHTML ="Wins: " + winCounter;
-            document.getElementById('winnersGlory').innerHTML = ""
+            displayImage();
+            document.getElementById('Winner!').innerHTML = "YOU WIN! Press any key to play again!";
             startGame();
         } else if (numGuesses === 0) {
             lossCounter++;
@@ -138,81 +166,5 @@ startGame(); //calls this function to start the game.
         roundComplete();
     };
 
-
-
-
-
-    
-
-    
-    // console.log(gameState.currentGuessedWord);
-
-    // function renderScoreboard() {
-    //     var scoreboard = document.getElementById("triesLeft");
-    //     scoreboard.innerHTML = gameState.numberOfGuesses;
-    //     changeWord();
-    //         var userGuess = event.key;
-
-    // }
-
-    // function changeWord() {
-    //     for (i = 0; i < gameState.numberOfGuesses; i++) {
-    //         gameState.currentGuessedWord = (gameState.currentGuessedWord + "_");
-    //         console.log("Boarding");
-    //     }   
-    // }
-
-    
-
-    // Show guesses left
-    // function guessesLeft() {
-    // triesLeft.innerHTML = numberOfGuesses + " guesses left";
-    //     if (numberOfGuesses < 1) {
-    //       triesLeft.innerHTML = "Game Over";
-    //     }
-    //     for (var i = 0; i < word.length; i++) {
-    //       if (counter + space === word.length) {
-    //         triesLeft.innerHTML = "You Win!";
-    //       }
-    //     }
-    // }
-
-    // document.onkeyup = function(event) {
-    //     var guessedLetter = event.key;
-    //     gameState.currentGuessedLetter = letterGuessed;
-    //     gameState.numberOfGuesses--;
-
-    //     letterGuessed.push(guessedLetter); //push guesed letter into the array. 
-        
-    //     for (i=0; i < letterGuessed; i++) {
-    //         $("#lettersGuessed").append("<p>" + currentGuessedLetter + "</p>");
-    //     }
-    // };
-
-    
-
-        
-    // renderScoreboard();
-    // $("#word").html(gameState.currentGuessedWord);
-    //function for users input
-    
-
-
-
-      
-   
-   
-
-  // document.onkeydown = function(event) {
-
-  //       // computer selects a word
-  //       var userGuess = event.key;
-
-
-        // if (userGuess === "f") {
-        //     console.log("it's working!");
-        // } else {console.log("IT BROKEN!") };
-
-    // };
 }
 
